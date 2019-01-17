@@ -24,8 +24,20 @@
         <h1>QuocMP</h1>
         <h2>Login</h2>
     </header>
-    <main>
+    <main>   
+           <form action="/auth" method="POST" >
+                <legend>Form login</legend>
+            
+                <div class="form-group">
+                    <label for="">username</label>
+                    <input type="text" name="username" class="form-control" id="" placeholder="Username">
+                    <label for="">password</label>
+                    <input type="password" name="password" class="form-control" id="" placeholder="Password">
+                    <input type="submit" class="btn btn-primary" value="Login">
+                </div>
+            </form>
         <a href="/auth/google" class="google-btn">Google+</a>
+        <a href="/auth/facebook" class="google-btn">Facebook</a>
     </main>
 </body>
 </html>

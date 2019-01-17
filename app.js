@@ -6,9 +6,8 @@ const keys = require('./config/keys')
 const cookieSession = require('cookie-session')
 const passport = require('passport')
 const profileRoutes = require('./routes/profile-routers')
-
 const app = express();
-
+const session = require('express-session')
 app.use(express.static('public'));
 //set up view ejs
 app.set('view engine', 'ejs');
@@ -18,6 +17,7 @@ app.use(cookieSession({
     keys: [keys.session.cokkieKey],
 }));
 
+//app.use(session({secret: 'quocmp'}))
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/auth',authRoutes);
